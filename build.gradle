@@ -1,0 +1,27 @@
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+}
+
+
+// Usage:
+//
+//task setProperties(type: SetPropertyTask) {
+//    url = ''
+//    repoKey = ''
+//    itemPath = ''
+//
+//    propertiesMap = [
+//            'build.name': System.env.JOB_NAME ?: System.env.HOSTNAME,
+//            'build.number': System.env.BUILD_NUMBER ?: 'PRIVATE',
+//            'build.url': System.env.BUILD_URL ?: System.env.USERNAME,
+//            // 'build.version': 'versionString',
+//            // 'arxml.md5' : MD5Util.md5(file("./build/out/${component_name}.arxml"))
+//    ]
+//}

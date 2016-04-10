@@ -1,8 +1,20 @@
 # PublishArtifactMetadataGradlePlugin
 This plugin allows publish an artifact properties to Artifactory
 
-Usage:
 implementation-class=tmp.pack.ArtifactMetadataPlugin
 
-NOTE: You can change the package name tmp.pack to the custom name
+Usage:
 
+task setProperties(type: SetPropertyTask) {
+    url = "${artifactory_contextUrl}"
+    repoKey = "${artifactory_repoKey}"
+    itemPath = "gtt/test/vm/${name}/${version}"
+
+    propertiesMap = [
+            'build.name': System.env.JOB_NAME ?: System.env.HOSTNAME,
+            'build.number': System.env.BUILD_NUMBER ?: 'PRIVATE',
+            'build.url': System.env.BUILD_URL ?: System.env.USERNAME,
+            'build.version': 'versionString',
+            'arxml.md5' : FileUtil.md5(file("./build/out/${component_name}.arxml"))
+    ]
+}

@@ -74,24 +74,4 @@ class SetPropertyTask extends DefaultTask {
                 .replace('|', '\\|')
                 .replace('=', '\\=')
     }
-
-    public void setPropertiesViaCurl() {
-        def path = getPropertiesPath(repoKey, itemPath)
-
-        ['curl', '-X', 'PUT', "\"${createSetPropertiesURL(path, propertiesMap)}\""].execute()
-        def proc = ['curl', "\"${createGetPropertiesURL(path)}\""].execute()
-        println new JsonSlurper().parseText(proc.text)
-    }
-
-
-    static String createSetPropertiesURL(String path, Map<String, String> propertiesMap) {
-        def propertiesValues = propertiesMap
-                .collect { it -> "${escape(it.key)}=${escape(it.value)}" }
-                .join('|')
-        "$path?properties=$propertiesValues"
-    }
-
-    static String createGetPropertiesURL(String path) {
-        "$path?properties"
-    }
 }

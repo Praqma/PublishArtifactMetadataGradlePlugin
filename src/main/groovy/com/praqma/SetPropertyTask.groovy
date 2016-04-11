@@ -1,4 +1,4 @@
-package tmp.pack
+package com.praqma
 
 import groovy.json.JsonSlurper
 import groovyx.net.http.HTTPBuilder

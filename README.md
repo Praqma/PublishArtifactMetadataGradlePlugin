@@ -1,14 +1,14 @@
 # PublishArtifactMetadataGradlePlugin
 This plugin allows publish an artifact properties to Artifactory
 
-implementation-class=tmp.pack.ArtifactMetadataPlugin
+implementation-class=com.praqma.ArtifactMetadataPlugin
 
 Usage:
 
 task setProperties(type: SetPropertyTask) {
     url = "${artifactory_contextUrl}"
     repoKey = "${artifactory_repoKey}"
-    itemPath = "gtt/test/vm/${name}/${version}"
+    itemPath = "/${component_name}/${name}/${version}"
 
     propertiesMap = [
             'build.name': System.env.JOB_NAME ?: System.env.HOSTNAME,

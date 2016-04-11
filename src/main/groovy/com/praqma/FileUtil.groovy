@@ -1,4 +1,4 @@
-package tmp.pack
+package com.praqma
 /**
  * Takes file and return a hash sum as a string
  */

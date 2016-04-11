@@ -1,4 +1,4 @@
-package tmp.pack
+package com.praqma
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

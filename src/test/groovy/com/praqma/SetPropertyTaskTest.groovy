@@ -1,4 +1,4 @@
-package tmp.pack
+package com.praqma
 
 
 class SetPropertyTaskTest extends GroovyTestCase {

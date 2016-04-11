@@ -5,7 +5,7 @@ implementation-class=com.praqma.ArtifactMetadataPlugin
 
 Usage:
 
-task setProperties(type: SetPropertyTask) {
+<pre><code> task setProperties(type: SetPropertyTask) {
     url = "${artifactory_contextUrl}"
     repoKey = "${artifactory_repoKey}"
     itemPath = "/${component_name}/${name}/${version}"
@@ -18,3 +18,4 @@ task setProperties(type: SetPropertyTask) {
             'arxml.md5' : FileUtil.md5(file("./build/out/${component_name}.arxml"))
     ]
 }
+</code></pre>

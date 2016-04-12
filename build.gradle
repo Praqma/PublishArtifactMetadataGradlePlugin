@@ -1,5 +1,8 @@
 apply plugin: 'groovy'
 
+group = 'com.praqma'
+version = '0.1.0'
+
 repositories {
     mavenCentral()
 }
@@ -7,22 +10,21 @@ repositories {
 dependencies {
     compile gradleApi()
     compile localGroovy()
-    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
 }
 
-
 // Usage:
+//  buildscript {
+//    repositories {
+//      maven {
+//          ...
+//       }
+//     }
+//     dependencies {
+//          classpath "com.praqma:artifact-metadata:0.1.0"
+//     }
+//  }
 //
-//task setProperties(type: SetPropertyTask) {
-//    url = ''
-//    repoKey = ''
-//    itemPath = ''
+// import com.praqma.PropertiesGenerator
 //
-//    propertiesMap = [
-//            'build.name': System.env.JOB_NAME ?: System.env.HOSTNAME,
-//            'build.number': System.env.BUILD_NUMBER ?: 'PRIVATE',
-//            'build.url': System.env.BUILD_URL ?: System.env.USERNAME,
-//            // 'build.version': 'versionString',
-//            // 'arxml.md5' : MD5Util.md5(file("./build/out/${component_name}.arxml"))
-//    ]
-//}
+// def props = PropertiesGenerator.updatePropertyMap(filepath, version)
+//

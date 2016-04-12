@@ -1,21 +1,20 @@
 # PublishArtifactMetadataGradlePlugin
-This plugin allows publish an artifact properties to Artifactory
-
-implementation-class=com.praqma.ArtifactMetadataPlugin
+This gradle project has a class update artifact properties
 
 Usage:
 
-<pre><code> task setProperties(type: SetPropertyTask) {
-    url = "${artifactory_contextUrl}"
-    repoKey = "${artifactory_repoKey}"
-    itemPath = "/${component_name}/${name}/${version}"
+<pre><code>   buildscript {
+                repositories {
+                  maven {
+                      ...
+                   }
+                 }
+                 dependencies {
+                      classpath "com.praqma:artifact-metadata:0.1.0"
+                 }
+              }
 
-    propertiesMap = [
-            'build.name': System.env.JOB_NAME ?: System.env.HOSTNAME,
-            'build.number': System.env.BUILD_NUMBER ?: 'PRIVATE',
-            'build.url': System.env.BUILD_URL ?: System.env.USERNAME,
-            'build.version': 'versionString',
-            'arxml.md5' : FileUtil.md5(file("./build/out/${component_name}.arxml"))
-    ]
-}
+             import com.praqma.PropertiesGenerator
+
+             def props = PropertiesGenerator.updatePropertyMap(filepath, version)
 </code></pre>

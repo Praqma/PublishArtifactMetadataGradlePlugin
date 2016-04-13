@@ -11,6 +11,15 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 }
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
 
 // Usage:
 //  buildscript {

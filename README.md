@@ -4,10 +4,12 @@ This gradle project has a class update artifact properties
 Usage:
 
 Clone this repo
-git clone ...
-Got to git repository
+<pre><code>git clone ... </code></pre>
+
+Go to git repository
+
 Build project and publish it to MavenLocal repository by command:
-./gradlew publishMavenPublicationToMavenLocal
+<pre><code>./gradlew publishMavenPublicationToMavenLocal </code></pre>
 
 You can check if *.jar has been published in
 ~/.m2/repository/com/praqma/artifact-metadata/0.1.0

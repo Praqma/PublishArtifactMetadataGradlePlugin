@@ -1,4 +1,9 @@
+---
+maintainer: alexsedova
+---
+
 # PublishArtifactMetadataGradlePlugin
+
 This gradle project has a class update artifact properties
 
 Usage:
